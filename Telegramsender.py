@@ -2,6 +2,7 @@ import logging
 import requests
 import os
 from dotenv import load_dotenv, find_dotenv
+
 load_dotenv(find_dotenv())
 TELEGRAM_API = (os.getenv('TGSTOKEN'))
 API_URL = f"https://api.telegram.org/bot{TELEGRAM_API}/sendMessage"
@@ -14,12 +15,13 @@ def send_news_to_telegram(message):
     :param message:
     :return:
     """
+
     try:
         response = requests.post(
             API_URL,
             json={
                 "chat_id": CHAT_ID,
-                "text": message,
+                "text": f"Pars:{message['symbol']} - Status:{message['status']}"
             },
         )
         if response.status_code == 200:
@@ -34,5 +36,3 @@ def send_news_to_telegram(message):
         logging.error(err)
 
 
-if __name__ == '__main__':
-    send_news_to_telegram('aga')

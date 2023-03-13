@@ -1,4 +1,9 @@
+import time
+
 import Telegramsender
 import binanceinfo
-if __name__=='__main__':
-    binanceinfo,Telegramsender
+
+for i in binanceinfo.get_binfo():
+    print(i)
+    Telegramsender.send_news_to_telegram(i)
+    time.sleep(2)
