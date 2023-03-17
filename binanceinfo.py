@@ -18,6 +18,7 @@ def get_binfo():
     symbols = info["symbols"]
     print(symbols)
 
+
     for sym in symbols:
         print(sym)
         print("====================================")

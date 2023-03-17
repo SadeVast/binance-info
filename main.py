@@ -1,5 +1,4 @@
 import time
-
 import Telegramsender
 import binanceinfo
 
