@@ -21,7 +21,7 @@ def send_news_to_telegram(message):
             API_URL,
             json={
                 "chat_id": CHAT_ID,
-                "text": f"Pars:{message['symbol']} - Status:{message['status']}"
+                "text": f"{message[0]} {message[1]}"
             },
         )
         if response.status_code == 200:

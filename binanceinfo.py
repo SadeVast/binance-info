@@ -18,12 +18,13 @@ def get_binfo():
     symbols = info["symbols"]
     print(symbols)
 
-
-    for sym in symbols:
-        print(sym)
+    for a in symbols:
+        print(a)
         print("====================================")
         time.sleep(2)
-        yield sym
+        result = [a['symbol'], a['status']]
+        print(result)
+        yield result
 
 
 

@@ -8,7 +8,7 @@ DATABASE = Path("info_database.db")
 CREATE_TABLE_SQL = """
 CREATE TABLE IF NOT EXISTS bin_info (
 symbol TEXT,
-status TEXT,
+status TEXT
 );
 """
 INSERT_INTO_SQL = """
