@@ -1,5 +1,5 @@
 FROM python: latest
 
-COPY main.py binanceinfo.py Telegramsender.py
+COPY ./binance-info
 
-CMD ["python", "./binanceinfo"]
+CMD ["python" "./main.py"]
