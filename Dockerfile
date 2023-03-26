@@ -1,5 +1,8 @@
-FROM python: latest
+FROM python:latest
 
-COPY ./binance-info
+COPY ("main.py","binanceinfo.py","Telegramsender.py","info_db.py")
+COPY requirements.txt requirements.txt
 
-CMD ["python" "./main.py"]
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+CMD ["python","./main.py"]
