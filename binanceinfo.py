@@ -1,12 +1,15 @@
 import time
 from binance.client import Client
 import os
-from dotenv import load_dotenv, find_dotenv
-load_dotenv(find_dotenv())
 
-API_KEY = (os.getenv('API_KEY'))
-API_SECRET = (os.getenv('API_SECRET'))
-
+# from dotenv import load_dotenv, find_dotenv
+# load_dotenv(find_dotenv())
+# Use when test on localhost
+# API_KEY = (os.getenv('API_KEY'))
+# API_SECRET = (os.getenv('API_SECRET'))
+# Use when build in image
+API_KEY=os.environ["API_KEY"]
+API_SECRET=os.environ["API_SECRET"]
 client = Client(API_KEY, API_SECRET)
 
 
@@ -18,11 +21,13 @@ def get_binfo():
     symbols = info["symbols"]
     print(symbols)
 
-    for sym in symbols:
-        print(sym)
+    for a in symbols:
+        print(a)
         print("====================================")
         time.sleep(2)
-        yield sym
+        result = [a['symbol'], a['status']]
+        print(result)
+        yield result
 
 
 

@@ -1,0 +1,9 @@
+#Git
+.git
+.github
+.gitignor
+#Env
+.env/
+venv
+.env
+#

@@ -1,0 +1,20 @@
+version: '3'
+services:
+  binanceinfo:
+    container_name: binanceinfo
+    image: sadeVast/binanceinfo:latest
+    pull_policy: always
+    restart: always
+    environment:
+      - TGSTOKEN=TGSTOKEN
+      - TGSID=TGSID
+      - API_KEY=API_KEY
+      - API_SECRET=API_SECRET
+    networks:
+      - binfo
+    hostname: binanceinfo
+#    volumes:
+#      - "./settings.toml:/opt/settings.toml"
+
+networks:
+  binfo:
